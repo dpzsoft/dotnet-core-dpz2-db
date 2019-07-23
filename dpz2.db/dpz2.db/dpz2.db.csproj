@@ -8,7 +8,7 @@
     <PackageLicenseFile>LICENSE</PackageLicenseFile>
     <Authors>d.p.z software studio</Authors>
     <Description>dpz2开发套件数据库应用扩展(.Net Core)</Description>
-    <Version>1.0.1907.1</Version>
+    <Version>1.0.1907.2</Version>
     <PackageId>dotnet-core-dpz2-db</PackageId>
   </PropertyGroup>
 
@@ -18,6 +18,8 @@
 
   <ItemGroup>
     <PackageReference Include="dotnet-core-dpz2" Version="1.0.1907.2" />
+    <PackageReference Include="dotnet-core-dpz2-conf" Version="1.0.1907.1" />
+    <PackageReference Include="dotnet-core-dpz2-file" Version="1.0.1907.1" />
     <PackageReference Include="Microsoft.Data.Sqlite" Version="2.2.6" />
     <PackageReference Include="MySql.Data" Version="8.0.17" />
     <PackageReference Include="System.Data.SqlClient" Version="4.6.1" />
