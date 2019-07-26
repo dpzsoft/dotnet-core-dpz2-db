@@ -174,6 +174,13 @@
             <param name="fidName"></param>
             <returns></returns>
         </member>
+        <member name="M:dpz2.db.Connection.Count(dpz2.db.ISqlStringable)">
+            <summary>
+            创建一个Count函数对象
+            </summary>
+            <param name="obj"></param>
+            <returns></returns>
+        </member>
         <member name="M:dpz2.db.Connection.OnDispose">
             <summary>
             释放资源
@@ -360,6 +367,19 @@
             释放对象
             </summary>
         </member>
+        <member name="T:dpz2.db.Database">
+            <summary>
+            数据库定义操作静态类
+            </summary>
+        </member>
+        <member name="M:dpz2.db.Database.LoadFromConf(System.String,System.String)">
+            <summary>
+            从配置文件中加载数据库定义
+            </summary>
+            <param name="path"></param>
+            <param name="group"></param>
+            <returns></returns>
+        </member>
         <member name="T:dpz2.db.Databases.MicrosoftSqlServer">
             <summary>
             Microsoft 公司推出的关系型数据库管理系统
@@ -543,6 +563,18 @@
             <summary>
             执行插入
             </summary>
+            <returns></returns>
+        </member>
+        <member name="T:dpz2.db.ISqlAsable">
+            <summary>
+            可进行标准SQL字符串转化接口
+            </summary>
+        </member>
+        <member name="M:dpz2.db.ISqlAsable.As(System.String)">
+            <summary>
+            允许对象重命名
+            </summary>
+            <param name="name">名称</param>
             <returns></returns>
         </member>
         <member name="T:dpz2.db.ISqlStringable">
@@ -768,6 +800,13 @@
             <param name="objs"></param>
             <returns></returns>
         </member>
+        <member name="M:dpz2.db.Select.As(System.String)">
+            <summary>
+            重命名
+            </summary>
+            <param name="name"></param>
+            <returns></returns>
+        </member>
         <member name="M:dpz2.db.Select.Limit(dpz2.db.SqlUnits.TableField,System.Int32,System.Int32)">
             <summary>
             设置游标
@@ -816,6 +855,38 @@
             <summary>
             释放资源
             </summary>
+        </member>
+        <member name="T:dpz2.db.SqlUnits.As">
+            <summary>
+            重命名
+            </summary>
+        </member>
+        <member name="M:dpz2.db.SqlUnits.As.#ctor(dpz2.db.ISqlStringable,System.String)">
+            <summary>
+            对象实例化
+            </summary>
+            <param name="obj"></param>
+            <param name="name"></param>
+        </member>
+        <member name="P:dpz2.db.SqlUnits.As.IsComplicated">
+            <summary>
+            获取是否为复杂对象
+            </summary>
+        </member>
+        <member name="M:dpz2.db.SqlUnits.As.ToSqlString(dpz2.DatabaseTypes,System.Boolean)">
+            <summary>
+            获取标准字段SQL字符串
+            </summary>
+            <param name="tp"></param>
+            <param name="multiTable"></param>
+            <returns></returns>
+        </member>
+        <member name="M:dpz2.db.SqlUnits.As.ToSqlTableString(dpz2.DatabaseTypes)">
+            <summary>
+            获取标准表SQL字符串
+            </summary>
+            <param name="tp"></param>
+            <returns></returns>
         </member>
         <member name="T:dpz2.db.SqlUnits.FieldDefine">
             <summary>
@@ -1229,6 +1300,53 @@
             </summary>
             <param name="tp"></param>
             <param name="multiTable"></param>
+            <returns></returns>
+        </member>
+        <member name="T:dpz2.db.SqlUnits.Functions.Basic">
+            <summary>
+            函数定义基类
+            </summary>
+        </member>
+        <member name="P:dpz2.db.SqlUnits.Functions.Basic.Name">
+            <summary>
+            函数名称
+            </summary>
+        </member>
+        <member name="M:dpz2.db.SqlUnits.Functions.Basic.#ctor(System.String)">
+            <summary>
+            对象实例化
+            </summary>
+            <param name="name"></param>
+        </member>
+        <member name="T:dpz2.db.SqlUnits.Functions.Count">
+            <summary>
+            统计函数
+            </summary>
+        </member>
+        <member name="M:dpz2.db.SqlUnits.Functions.Count.#ctor(dpz2.db.ISqlStringable)">
+            <summary>
+            对象实例化
+            </summary>
+            <param name="obj"></param>
+        </member>
+        <member name="P:dpz2.db.SqlUnits.Functions.Count.IsComplicated">
+            <summary>
+            获取是否为复杂对象
+            </summary>
+        </member>
+        <member name="M:dpz2.db.SqlUnits.Functions.Count.ToSqlString(dpz2.DatabaseTypes,System.Boolean)">
+            <summary>
+            
+            </summary>
+            <param name="tp"></param>
+            <param name="multiTable"></param>
+            <returns></returns>
+        </member>
+        <member name="M:dpz2.db.SqlUnits.Functions.Count.As(System.String)">
+            <summary>
+            重命名
+            </summary>
+            <param name="name"></param>
             <returns></returns>
         </member>
         <member name="T:dpz2.db.SqlUnits.Number">
@@ -1745,6 +1863,13 @@
             LIKE操作
             </summary>
             <param name="right"></param>
+            <returns></returns>
+        </member>
+        <member name="M:dpz2.db.SqlUnits.TableField.As(System.String)">
+            <summary>
+            重命名
+            </summary>
+            <param name="name"></param>
             <returns></returns>
         </member>
         <member name="M:dpz2.db.SqlUnits.TableField.OnDispose">

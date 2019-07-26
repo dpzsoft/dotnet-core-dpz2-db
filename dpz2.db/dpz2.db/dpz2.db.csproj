@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>netcoreapp2.2</TargetFramework>
@@ -8,12 +8,12 @@
     <PackageLicenseFile>LICENSE</PackageLicenseFile>
     <Authors>d.p.z software studio</Authors>
     <Description>dpz2开发套件数据库应用扩展(.Net Core)</Description>
-    <Version>1.0.1907.2</Version>
+    <Version>1.0.1907.4</Version>
     <PackageId>dotnet-core-dpz2-db</PackageId>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
-    <DocumentationFile>X:\Projects\dpzsoft\dotnet-core-dpz2-db\dpz2.db\dpz2.db\dpz2.db.xml</DocumentationFile>
+    <DocumentationFile>X:\Projects\dpzsoft\dotnet-core-dpz2\dotnet-core-dpz2-db\dpz2.db\dpz2.db\dpz2.db.xml</DocumentationFile>
   </PropertyGroup>
 
   <ItemGroup>

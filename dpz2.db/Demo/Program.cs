@@ -25,104 +25,113 @@ namespace Demo {
 
             // 完整的查询操作
             // 建立数据库连接
-            using (dpz2.db.Connection dbc = new dpz2.db.Connection(db)) {
+            //using (dpz2.db.Connection dbc = new dpz2.db.Connection(db)) {
 
-                // 创建一个ORM对象
-                using (SqlServerSystemTables orm = new SqlServerSystemTables()) {
+            //    // 创建一个ORM对象
+            //    using (SqlServerSystemTables orm = new SqlServerSystemTables()) {
 
-                    // 定义Select语句并读取一行数据
-                    var row = dbc.Select(orm.SysObjects, orm.SysColumns)
-                        .Columns(orm.SysColumns.Name)
-                        .Where((orm.SysObjects.Id == orm.SysColumns.Id) & (orm.SysObjects.Name == "SyatemObjects") & (orm.SysColumns.Name == "Name") & orm.SysObjects.Type.In("S", "U"))
-                        .GetRow();
+            //        // 定义Select语句并读取一行数据
+            //        var row = dbc.Select(orm.SysObjects, orm.SysColumns)
+            //            .Columns(orm.SysColumns.Name)
+            //            .Where((orm.SysObjects.Id == orm.SysColumns.Id) & (orm.SysObjects.Name == "SyatemObjects") & (orm.SysColumns.Name == "Name") & orm.SysObjects.Type.In("S", "U"))
+            //            .GetRow();
 
-                    // 判断是否读取到数据
-                    if (!row.IsEmpty) {
+            //        // 判断是否读取到数据
+            //        if (!row.IsEmpty) {
 
-                        // 字段定义方式读取数据
-                        Console.WriteLine($"Name = {row[orm.SysColumns.Name]}");
+            //            // 字段定义方式读取数据
+            //            Console.WriteLine($"Name = {row[orm.SysColumns.Name]}");
 
-                        // 字符串定义方式读取数据
-                        Console.WriteLine($"Name = {row["Name"]}");
+            //            // 字符串定义方式读取数据
+            //            Console.WriteLine($"Name = {row["Name"]}");
 
-                        // 动态方式读取数据
-                        dynamic dyc = row;
-                        Console.WriteLine($"Name = {dyc.Name}");
-                    }
-                }
-            }
-
-            // 建立数据库连接
-            using (dpz2.db.Connection dbc = new dpz2.db.Connection(db)) {
-
-                // 创建一个ORM对象
-                using (SqlServerSystemTables orm = new SqlServerSystemTables()) {
-
-                    // 新建一个行数据对象，定义需要插入的数据
-                    Row row = new Row();
-                    orm.SysColumns.Rower(row)
-                        .SetName("123");
-
-                    // 创建一个Insert语句并执行
-                    dbc.Insert(orm.SysColumns, row).Exec();
-                }
-            }
+            //            // 动态方式读取数据
+            //            dynamic dyc = row;
+            //            Console.WriteLine($"Name = {dyc.Name}");
+            //        }
+            //    }
+            //}
 
             // 建立数据库连接
-            using (dpz2.db.Connection dbc = new dpz2.db.Connection(db)) {
+            //using (dpz2.db.Connection dbc = new dpz2.db.Connection(db)) {
 
-                // 创建一个ORM对象
-                using (SqlServerSystemTables orm = new SqlServerSystemTables()) {
+            //    // 创建一个ORM对象
+            //    using (SqlServerSystemTables orm = new SqlServerSystemTables()) {
 
-                    // 新建一个行数据对象，定义需要插入的数据
-                    Row row = new Row();
-                    orm.SysColumns.Rower(row)
-                        .SetId(1)
-                        .SetName("123");
+            //        // 新建一个行数据对象，定义需要插入的数据
+            //        Row row = new Row();
+            //        orm.SysColumns.Rower(row)
+            //            .SetName("123");
 
-                    // 创建一个Update语句并执行
-                    dbc.Update(orm.SysColumns, row, orm.SysColumns.Id).Exec();
-                }
-            }
-
-            // 建立数据库连接
-            using (dpz2.db.Connection dbc = new dpz2.db.Connection(db)) {
-
-                // 创建一个ORM对象
-                using (SqlServerSystemTables orm = new SqlServerSystemTables()) {
-
-                    // 新建一个行数据对象，定义需要插入的数据
-                    Row row = new Row();
-                    orm.SysColumns.Rower(row)
-                        .SetName("123");
-
-                    // 创建一个Update语句并执行
-                    dbc.Update(orm.SysObjects, row)
-                        .Where(orm.SysColumns.Name == "456")
-                        .Exec();
-                }
-            }
+            //        // 创建一个Insert语句并执行
+            //        dbc.Insert(orm.SysColumns, row).Exec();
+            //    }
+            //}
 
             // 建立数据库连接
+            //using (dpz2.db.Connection dbc = new dpz2.db.Connection(db)) {
+
+            //    // 创建一个ORM对象
+            //    using (SqlServerSystemTables orm = new SqlServerSystemTables()) {
+
+            //        // 新建一个行数据对象，定义需要插入的数据
+            //        Row row = new Row();
+            //        orm.SysColumns.Rower(row)
+            //            .SetId(1)
+            //            .SetName("123");
+
+            //        // 创建一个Update语句并执行
+            //        dbc.Update(orm.SysColumns, row, orm.SysColumns.Id).Exec();
+            //    }
+            //}
+
+            // 建立数据库连接
+            //using (dpz2.db.Connection dbc = new dpz2.db.Connection(db)) {
+
+            //    // 创建一个ORM对象
+            //    using (SqlServerSystemTables orm = new SqlServerSystemTables()) {
+
+            //        // 新建一个行数据对象，定义需要插入的数据
+            //        Row row = new Row();
+            //        orm.SysColumns.Rower(row)
+            //            .SetName("123");
+
+            //        // 创建一个Update语句并执行
+            //        dbc.Update(orm.SysObjects, row)
+            //            .Where(orm.SysColumns.Name == "456")
+            //            .Exec();
+            //    }
+            //}
+
+            // 建立数据库连接
+            //using (dpz2.db.Connection dbc = new dpz2.db.Connection(db)) {
+
+            //    // 创建一个ORM对象
+            //    using (SqlServerSystemTables orm = new SqlServerSystemTables()) {
+
+            //        // 创建一个Insert语句并执行
+            //        dbc.Delete(orm.SysObjects)
+            //            .Where(orm.SysColumns.Name == "456")
+            //            .Exec();
+            //    }
+            //}
+
             using (dpz2.db.Connection dbc = new dpz2.db.Connection(db)) {
 
-                // 创建一个ORM对象
+                // 查询语句带函数测试
+                Console.WriteLine();
                 using (SqlServerSystemTables orm = new SqlServerSystemTables()) {
-
-                    // 创建一个Insert语句并执行
-                    dbc.Delete(orm.SysObjects)
-                        .Where(orm.SysColumns.Name == "456")
-                        .Exec();
+                    string sql = dbc.Select(orm.SysObjects)
+                        .Columns(dbc.Count(orm.SysObjects.Id))
+                        .ToSqlString();
+                    Console.WriteLine(sql);
                 }
-            }
 
-            using (dpz2.db.Connection dbc = new dpz2.db.Connection(db)) {
-
-                // 查询语句测试
+                // 查询语句带函数测试
                 Console.WriteLine();
                 using (SqlServerSystemTables orm = new SqlServerSystemTables()) {
                     string sql = dbc.Select(orm.SysObjects, orm.SysColumns)
-                        .Columns(orm.SysObjects.Name, orm.SysObjects.Type)
+                        .Columns(dbc.Count(orm.SysObjects.Id))
                         .Where((orm.SysObjects.Id == orm.SysColumns.Id) & (orm.SysObjects.Name == "SyatemObjects") & orm.SysObjects.Type.In("S", "U"))
                         .ToSqlString();
                     Console.WriteLine(sql);

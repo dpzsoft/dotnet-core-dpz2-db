@@ -7,7 +7,7 @@ namespace dpz2.db.SqlUnits {
     /// <summary>
     /// 表字段
     /// </summary>
-    public class TableField : dpz2.Object, ISqlStringable {
+    public class TableField : dpz2.Object, ISqlStringable, ISqlAsable {
 
         // 关联表
         private Table _table;
@@ -49,6 +49,7 @@ namespace dpz2.db.SqlUnits {
             if (multiTable) {
                 // 获取表SQL
                 string table = _table.ToSqlString(tp);
+                if (_name == "*") return $"{table}.*";
                 switch (tp) {
                     case DatabaseTypes.Microsoft_Office_Access:
                     case DatabaseTypes.Microsoft_Office_Access_v12:
@@ -62,6 +63,7 @@ namespace dpz2.db.SqlUnits {
                         throw new Exception($"尚未支持 {tp.ToString()} 类型数据库");
                 }
             } else {
+                if (_name == "*") return "*";
                 switch (tp) {
                     case DatabaseTypes.Microsoft_Office_Access:
                     case DatabaseTypes.Microsoft_Office_Access_v12:
@@ -472,6 +474,13 @@ namespace dpz2.db.SqlUnits {
         /// <param name="right"></param>
         /// <returns></returns>
         public Formula Like(string right) { return new Formula(this, "LIKE", new String(right)); }
+
+        /// <summary>
+        /// 重命名
+        /// </summary>
+        /// <param name="name"></param>
+        /// <returns></returns>
+        public As As(string name) { return new As(this, name); }
 
         #endregion
 

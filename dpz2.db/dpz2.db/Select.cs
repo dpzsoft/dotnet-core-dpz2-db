@@ -1,13 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using dpz2.db.SqlUnits;
 
 namespace dpz2.db {
 
     /// <summary>
     /// 查询对象
     /// </summary>
-    public class Select : dpz2.Object, ISqlStringable {
+    public class Select : dpz2.Object, ISqlStringable, ISqlAsable {
 
         // 数据库连接
         private Connection _dbc;
@@ -109,6 +110,13 @@ namespace dpz2.db {
             _group = objs;
             return this;
         }
+
+        /// <summary>
+        /// 重命名
+        /// </summary>
+        /// <param name="name"></param>
+        /// <returns></returns>
+        public As As(string name) { return new As(this, name); }
 
         /// <summary>
         /// 设置游标
@@ -287,5 +295,6 @@ namespace dpz2.db {
             return res;
 
         }
+
     }
 }

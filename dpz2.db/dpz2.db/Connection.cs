@@ -490,6 +490,19 @@ namespace dpz2.db {
 
         #endregion
 
+        #region [=====函数操作=====]
+
+        /// <summary>
+        /// 创建一个Count函数对象
+        /// </summary>
+        /// <param name="obj"></param>
+        /// <returns></returns>
+        public SqlUnits.Functions.Count Count(ISqlStringable obj) {
+            return new SqlUnits.Functions.Count(obj);
+        }
+
+        #endregion
+
         /// <summary>
         /// 释放资源
         /// </summary>
