@@ -16,6 +16,39 @@ namespace dpz2.db {
         /// <param name="group"></param>
         /// <returns></returns>
         public static dpz2.Database LoadFromConf(string path, string group = "default") {
+
+            // 当文件不存在时，执行初始化创建
+            if (!System.IO.File.Exists(path)) {
+                using (dpz2.Conf.File file = new Conf.File(path)) {
+
+                    // 建立Sqlserver示例
+                    var sqlserverGroup = file["SqlServer"];
+                    sqlserverGroup["Type"] = "SqlServer";
+                    sqlserverGroup["Address"] = "127.0.0.1";
+                    sqlserverGroup["Port"] = "1433";
+                    sqlserverGroup["Name"] = "master";
+                    sqlserverGroup["User"] = "sa";
+                    sqlserverGroup["Password"] = "123456";
+
+                    // 建立mysql示例
+                    var mysqlGroup = file["MySql"];
+                    mysqlGroup["Type"] = "MySql";
+                    mysqlGroup["Address"] = "127.0.0.1";
+                    mysqlGroup["Port"] = "3306";
+                    mysqlGroup["Name"] = "mysql";
+                    mysqlGroup["User"] = "root";
+                    mysqlGroup["Password"] = "123456";
+
+                    // 建立sqlite示例
+                    var sqliteGroup = file["Sqlite"];
+                    mysqlGroup["Type"] = "Sqlite";
+                    mysqlGroup["Path"] = "/db/sqlite.db";
+
+                    //文件保存
+                    file.Save();
+                }
+            }
+
             using (dpz2.Conf.File file = new Conf.File(path)) {
                 var confGroup = file[group];
                 string dbType = confGroup["Type"];

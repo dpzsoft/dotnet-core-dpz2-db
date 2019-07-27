@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace dpz2.db {
+namespace dpz2.db.SqlStatements {
 
     /// <summary>
     /// 数据更新语句

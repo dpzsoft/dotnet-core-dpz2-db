@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using dpz2.db.SqlUnits;
 
-namespace dpz2.db {
+namespace dpz2.db.SqlStatements {
 
     /// <summary>
     /// 查询对象
