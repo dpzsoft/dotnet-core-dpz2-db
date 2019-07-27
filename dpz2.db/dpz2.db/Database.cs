@@ -41,8 +41,8 @@ namespace dpz2.db {
 
                     // 建立sqlite示例
                     var sqliteGroup = file["Sqlite"];
-                    mysqlGroup["Type"] = "Sqlite";
-                    mysqlGroup["Path"] = "/db/sqlite.db";
+                    sqliteGroup["Type"] = "Sqlite";
+                    sqliteGroup["Path"] = "/db/sqlite.db";
 
                     //文件保存
                     file.Save();
