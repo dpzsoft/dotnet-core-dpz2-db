@@ -181,6 +181,12 @@
             <param name="obj"></param>
             <returns></returns>
         </member>
+        <member name="M:dpz2.db.Connection.Rand">
+            <summary>
+            创建一个随机排序对象
+            </summary>
+            <returns></returns>
+        </member>
         <member name="M:dpz2.db.Connection.OnDispose">
             <summary>
             释放资源
@@ -1436,6 +1442,24 @@
             </summary>
         </member>
         <member name="M:dpz2.db.SqlUnits.Numbers.ToSqlString(dpz2.DatabaseTypes,System.Boolean)">
+            <summary>
+            获取标准SQL字符串
+            </summary>
+            <param name="tp"></param>
+            <param name="multiTable"></param>
+            <returns></returns>
+        </member>
+        <member name="T:dpz2.db.SqlUnits.Rand">
+            <summary>
+            随机函数内容
+            </summary>
+        </member>
+        <member name="P:dpz2.db.SqlUnits.Rand.IsComplicated">
+            <summary>
+            获取是否为复杂对象
+            </summary>
+        </member>
+        <member name="M:dpz2.db.SqlUnits.Rand.ToSqlString(dpz2.DatabaseTypes,System.Boolean)">
             <summary>
             获取标准SQL字符串
             </summary>

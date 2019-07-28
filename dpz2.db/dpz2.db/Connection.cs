@@ -502,6 +502,14 @@ namespace dpz2.db {
             return new SqlUnits.Functions.Count(obj);
         }
 
+        /// <summary>
+        /// 创建一个随机排序对象
+        /// </summary>
+        /// <returns></returns>
+        public SqlUnits.Rand Rand() {
+            return new SqlUnits.Rand();
+        }
+
         #endregion
 
         /// <summary>
