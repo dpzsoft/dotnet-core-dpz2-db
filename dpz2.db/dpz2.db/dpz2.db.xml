@@ -1589,6 +1589,12 @@
             <param name="table"></param>
             <param name="name"></param>
         </member>
+        <member name="M:dpz2.db.SqlUnits.TableField.#ctor(System.String)">
+            <summary>
+            对象实例化
+            </summary>
+            <param name="name"></param>
+        </member>
         <member name="M:dpz2.db.SqlUnits.TableField.OnParseString">
             <summary>
             获取字符串表现形式

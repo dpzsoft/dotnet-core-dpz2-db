@@ -277,7 +277,7 @@ namespace dpz2.db.SqlStatements {
                         res += " FROM (" + szSelect1 + ") AS " + szTab;
 
                         //构架新的条件
-                        res += " WHERE " + _limitFeild.ToSqlString(tp, multiTable) + " NOT IN (" + szSelect2 + ")";
+                        res += " WHERE " + _limitFeild.ToSqlString(tp, false) + " NOT IN (" + szSelect2 + ")";
 
                         #endregion
                         break;

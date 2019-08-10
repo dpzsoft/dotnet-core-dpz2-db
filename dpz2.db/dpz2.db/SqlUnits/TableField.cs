@@ -26,6 +26,15 @@ namespace dpz2.db.SqlUnits {
         }
 
         /// <summary>
+        /// 对象实例化
+        /// </summary>
+        /// <param name="name"></param>
+        public TableField(string name) {
+            _table = null;
+            _name = name;
+        }
+
+        /// <summary>
         /// 获取字符串表现形式
         /// </summary>
         /// <returns></returns>
@@ -45,6 +54,8 @@ namespace dpz2.db.SqlUnits {
         /// <param name="multiTable"></param>
         /// <returns></returns>
         public string ToSqlString(dpz2.DatabaseTypes tp, bool multiTable = false) {
+            // 当表不存在时，强制设置未单表模式
+            if (_table == null) multiTable = false;
             // 判断是否为多表环境
             if (multiTable) {
                 // 获取表SQL
