@@ -8,7 +8,7 @@
     <PackageLicenseFile>LICENSE</PackageLicenseFile>
     <Authors>d.p.z software studio</Authors>
     <Description>dpz2开发套件数据库应用扩展(.Net Core)</Description>
-    <Version>1.1.1908.10</Version>
+    <Version>1.1.1908.11</Version>
     <PackageId>dotnet-core-dpz2-db</PackageId>
   </PropertyGroup>
 

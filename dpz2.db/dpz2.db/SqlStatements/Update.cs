@@ -77,7 +77,7 @@ namespace dpz2.db.SqlStatements {
                     //cols += $" = '{_row[key]}'";
                     switch (tp) {
                         case DatabaseTypes.MySQL:
-                            cols += $"'{_row[key].Replace("'", "\'")}'";
+                            cols += $" = '{_row[key].Replace("'", "\'")}'";
                             break;
                         //return $"'{_value.Replace("'", "\'")}'";
                         case DatabaseTypes.Microsoft_Office_Access:
@@ -85,7 +85,7 @@ namespace dpz2.db.SqlStatements {
                         case DatabaseTypes.Microsoft_SQL_Server:
                         case DatabaseTypes.SQLite:
                         case DatabaseTypes.SQLite_3:
-                            cols += $"'{_row[key].Replace("'", "''")}'";
+                            cols += $" = '{_row[key].Replace("'", "''")}'";
                             break;
                         //return $"'{_value.Replace("'", "''")}'";
                         default:
