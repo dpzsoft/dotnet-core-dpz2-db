@@ -33,7 +33,19 @@ namespace dpz2.db.SqlUnits {
         /// <returns></returns>
         public string ToSqlString(DatabaseTypes tp, bool multiTable = false) {
             if (_value == null) return "NULL";
-            return $"'{_value}'";
+            switch (tp) {
+                case DatabaseTypes.MySQL:
+                    return $"'{_value.Replace("'", "\'")}'";
+                case DatabaseTypes.Microsoft_Office_Access:
+                case DatabaseTypes.Microsoft_Office_Access_v12:
+                case DatabaseTypes.Microsoft_SQL_Server:
+                case DatabaseTypes.SQLite:
+                case DatabaseTypes.SQLite_3:
+                    return $"'{_value.Replace("'", "''")}'";
+                default:
+                    throw new Exception($"尚未支持数据库 {tp.ToString()} 中的字符串转义。");
+            }
+
         }
     }
 }

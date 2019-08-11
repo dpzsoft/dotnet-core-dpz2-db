@@ -74,7 +74,23 @@ namespace dpz2.db.SqlStatements {
                     using (SqlUnits.TableField field = new SqlUnits.TableField(_table, key)) {
                         cols += field.ToSqlString(tp);
                     }
-                    cols += $" = '{_row[key]}'";
+                    //cols += $" = '{_row[key]}'";
+                    switch (tp) {
+                        case DatabaseTypes.MySQL:
+                            cols += $"'{_row[key].Replace("'", "\'")}'";
+                            break;
+                        //return $"'{_value.Replace("'", "\'")}'";
+                        case DatabaseTypes.Microsoft_Office_Access:
+                        case DatabaseTypes.Microsoft_Office_Access_v12:
+                        case DatabaseTypes.Microsoft_SQL_Server:
+                        case DatabaseTypes.SQLite:
+                        case DatabaseTypes.SQLite_3:
+                            cols += $"'{_row[key].Replace("'", "''")}'";
+                            break;
+                        //return $"'{_value.Replace("'", "''")}'";
+                        default:
+                            throw new Exception($"尚未支持数据库 {tp.ToString()} 中的字符串转义。");
+                    }
                 }
             }
 
@@ -84,7 +100,23 @@ namespace dpz2.db.SqlStatements {
                 res += " WHERE ";
                 using (SqlUnits.TableField field = new SqlUnits.TableField(_table, keyCol)) {
                     res += field.ToSqlString(tp);
-                    res += $" = '{_row[keyCol]}'";
+                    switch (tp) {
+                        case DatabaseTypes.MySQL:
+                            res += $" = '{_row[keyCol].Replace("'", "\'")}'";
+                            break;
+                        //return $"'{_value.Replace("'", "\'")}'";
+                        case DatabaseTypes.Microsoft_Office_Access:
+                        case DatabaseTypes.Microsoft_Office_Access_v12:
+                        case DatabaseTypes.Microsoft_SQL_Server:
+                        case DatabaseTypes.SQLite:
+                        case DatabaseTypes.SQLite_3:
+                            res += $" = '{_row[keyCol].Replace("'", "''")}'";
+                            break;
+                        //return $"'{_value.Replace("'", "''")}'";
+                        default:
+                            throw new Exception($"尚未支持数据库 {tp.ToString()} 中的字符串转义。");
+                    }
+                    //res += $" = '{_row[keyCol]}'";
                 }
             } else {
                 if (!Equals(_where, null)) {

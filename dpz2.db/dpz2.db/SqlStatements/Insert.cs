@@ -54,7 +54,23 @@ namespace dpz2.db.SqlStatements {
                 using (SqlUnits.TableField field = new SqlUnits.TableField(_table, key)) {
                     cols += field.ToSqlString(tp);
                 }
-                vals += $"'{_row[key]}'";
+                switch (tp) {
+                    case DatabaseTypes.MySQL:
+                        vals += $"'{_row[key].Replace("'", "\'")}'";
+                        break;
+                        //return $"'{_value.Replace("'", "\'")}'";
+                    case DatabaseTypes.Microsoft_Office_Access:
+                    case DatabaseTypes.Microsoft_Office_Access_v12:
+                    case DatabaseTypes.Microsoft_SQL_Server:
+                    case DatabaseTypes.SQLite:
+                    case DatabaseTypes.SQLite_3:
+                        vals += $"'{_row[key].Replace("'", "''")}'";
+                        break;
+                    //return $"'{_value.Replace("'", "''")}'";
+                    default:
+                        throw new Exception($"尚未支持数据库 {tp.ToString()} 中的字符串转义。");
+                }
+                
             }
 
             res += $"({cols}) VALUES ({vals})";
