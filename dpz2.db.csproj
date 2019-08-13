@@ -7,8 +7,8 @@
     <PackageIconUrl>https://dev.lywos.com/Img/dpz/logo.jpg</PackageIconUrl>
     <PackageLicenseFile>LICENSE</PackageLicenseFile>
     <Authors>d.p.z software studio</Authors>
-    <Description>dpz2开发套件数据库应用扩展(.Net Core),目前支持Sql Server、MySql、Sqlite和PostgreSql</Description>
-    <Version>1.1.1908.12</Version>
+    <Description>dpz2开发套件数据库应用扩展(.Net Core)，目前支持Sql Server、MySql、Sqlite和PostgreSql</Description>
+    <Version>1.1.1908.13</Version>
     <PackageId>dotnet-core-dpz2-db</PackageId>
   </PropertyGroup>
 

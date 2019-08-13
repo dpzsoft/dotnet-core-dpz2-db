@@ -54,8 +54,7 @@ namespace Demo.Orm {
                     case "SysObjects": return this.SysObjects;
                     case "SysColumns": return this.SysColumns;
                     case "abc": return this.abc;
-                    default:
-                        throw new Exception("未找到对应表定义");
+                    default: throw new Exception("未找到对应表定义");
                 }
             }
         }

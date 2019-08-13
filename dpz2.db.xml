@@ -697,6 +697,44 @@
             <param name="tp">数据库定义对象</param>
             <returns></returns>
         </member>
+        <member name="T:dpz2.db.OrmTables">
+            <summary>
+            Orm框架的表定义集合基类
+            </summary>
+        </member>
+        <member name="M:dpz2.db.OrmTables.OnGetTable(System.String)">
+            <summary>
+            获取相关的字段定义
+            </summary>
+            <param name="name"></param>
+            <returns></returns>
+        </member>
+        <member name="P:dpz2.db.OrmTables.Item(System.String)">
+            <summary>
+            获取相关的字段定义
+            </summary>
+            <param name="name"></param>
+            <returns></returns>
+        </member>
+        <member name="T:dpz2.db.OrmFields">
+            <summary>
+            Orm框架的字段定义集合基类
+            </summary>
+        </member>
+        <member name="M:dpz2.db.OrmFields.OnGetField(System.String)">
+            <summary>
+            获取相关的字段定义
+            </summary>
+            <param name="name"></param>
+            <returns></returns>
+        </member>
+        <member name="P:dpz2.db.OrmFields.Item(System.String)">
+            <summary>
+            获取相关的字段定义
+            </summary>
+            <param name="name"></param>
+            <returns></returns>
+        </member>
         <member name="M:dpz2.db.RowDynamicMetaObject.#ctor(System.Linq.Expressions.Expression,System.Object)">
             <summary>
             对象实例化

@@ -83,8 +83,7 @@ namespace Demo.Orm.SystemTables {
             switch (name) {
                 case "ID": return this.ID;
                 case "Name": return this.Name;
-                default:
-                    return base.OnGetField(name);
+                default: return base.OnGetField(name);
             }
 
         }
