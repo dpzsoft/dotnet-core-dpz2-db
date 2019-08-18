@@ -34,24 +34,6 @@ namespace dpz2.db.SqlUnits {
         public bool IsComplicated { get { return false; } set { } }
 
         /// <summary>
-        /// 获取相关的字段定义
-        /// </summary>
-        /// <param name="name"></param>
-        /// <returns></returns>
-        protected virtual TableField OnGetField(string name) { throw new Exception("未找到字段定义"); }
-
-        /// <summary>
-        /// 获取相关的字段定义
-        /// </summary>
-        /// <param name="name"></param>
-        /// <returns></returns>
-        public TableField this[string name] {
-            get {
-                return OnGetField(name);
-            }
-        }
-
-        /// <summary>
         /// 获取标准SQL字符串
         /// </summary>
         /// <param name="tp"></param>

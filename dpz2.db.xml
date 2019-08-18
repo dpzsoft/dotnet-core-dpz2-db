@@ -697,25 +697,6 @@
             <param name="tp">数据库定义对象</param>
             <returns></returns>
         </member>
-        <member name="T:dpz2.db.OrmTables">
-            <summary>
-            Orm框架的表定义集合基类
-            </summary>
-        </member>
-        <member name="M:dpz2.db.OrmTables.OnGetTable(System.String)">
-            <summary>
-            获取相关的字段定义
-            </summary>
-            <param name="name"></param>
-            <returns></returns>
-        </member>
-        <member name="P:dpz2.db.OrmTables.Item(System.String)">
-            <summary>
-            获取相关的字段定义
-            </summary>
-            <param name="name"></param>
-            <returns></returns>
-        </member>
         <member name="T:dpz2.db.OrmFields">
             <summary>
             Orm框架的字段定义集合基类
@@ -729,6 +710,63 @@
             <returns></returns>
         </member>
         <member name="P:dpz2.db.OrmFields.Item(System.String)">
+            <summary>
+            获取相关的字段定义
+            </summary>
+            <param name="name"></param>
+            <returns></returns>
+        </member>
+        <member name="T:dpz2.db.OrmTable">
+            <summary>
+            Orm专用表定义
+            </summary>
+        </member>
+        <member name="M:dpz2.db.OrmTable.#ctor(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="name"></param>
+        </member>
+        <member name="M:dpz2.db.OrmTable.OnRowerCreate(dpz2.db.Row)">
+            <summary>
+            创建一个行数据操作器
+            </summary>
+            <param name="row"></param>
+            <returns></returns>
+        </member>
+        <member name="M:dpz2.db.OrmTable.Rower(dpz2.db.Row)">
+            <summary>
+            创建一个行数据操作器
+            </summary>
+            <param name="row">行数据对象</param>
+        </member>
+        <member name="M:dpz2.db.OrmTable.OnGetField(System.String)">
+            <summary>
+            获取相关的字段定义
+            </summary>
+            <param name="name"></param>
+            <returns></returns>
+        </member>
+        <member name="P:dpz2.db.OrmTable.Item(System.String)">
+            <summary>
+            获取相关的字段定义
+            </summary>
+            <param name="name"></param>
+            <returns></returns>
+        </member>
+        <member name="T:dpz2.db.OrmTables">
+            <summary>
+            Orm框架的表定义集合基类
+            </summary>
+        </member>
+        <member name="M:dpz2.db.OrmTables.OnGetTable(System.String)">
+            <summary>
+            获取相关的字段定义
+            </summary>
+            <param name="name"></param>
+            <returns></returns>
+        </member>
+        <member name="P:dpz2.db.OrmTables.Item(System.String)">
             <summary>
             获取相关的字段定义
             </summary>
@@ -810,6 +848,21 @@
             <summary>
             获取基础数据行对象
             </summary>
+            <returns></returns>
+        </member>
+        <member name="M:dpz2.db.RowOperator.OnSetValue(System.String,System.String)">
+            <summary>
+            设置内容
+            </summary>
+            <param name="key"></param>
+            <param name="value"></param>
+        </member>
+        <member name="M:dpz2.db.RowOperator.Set(System.String,System.String)">
+            <summary>
+            设置内容
+            </summary>
+            <param name="key"></param>
+            <param name="value"></param>
             <returns></returns>
         </member>
         <member name="M:dpz2.db.RowOperator.OnDispose">
@@ -1750,20 +1803,6 @@
             <summary>
             获取是否为复杂对象
             </summary>
-        </member>
-        <member name="M:dpz2.db.SqlUnits.Table.OnGetField(System.String)">
-            <summary>
-            获取相关的字段定义
-            </summary>
-            <param name="name"></param>
-            <returns></returns>
-        </member>
-        <member name="P:dpz2.db.SqlUnits.Table.Item(System.String)">
-            <summary>
-            获取相关的字段定义
-            </summary>
-            <param name="name"></param>
-            <returns></returns>
         </member>
         <member name="M:dpz2.db.SqlUnits.Table.ToSqlString(dpz2.db.DatabaseTypes,System.Boolean)">
             <summary>

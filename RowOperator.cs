@@ -29,6 +29,24 @@ namespace dpz2.db {
         public Row GetRow() { return this.Row; }
 
         /// <summary>
+        /// 设置内容
+        /// </summary>
+        /// <param name="key"></param>
+        /// <param name="value"></param>
+        protected virtual void OnSetValue(string key, string value) { }
+
+        /// <summary>
+        /// 设置内容
+        /// </summary>
+        /// <param name="key"></param>
+        /// <param name="value"></param>
+        /// <returns></returns>
+        public RowOperator Set(string key, string value) {
+            this.OnSetValue(key, value);
+            return this;
+        }
+
+        /// <summary>
         /// 释放资源
         /// </summary>
         protected override void OnDispose() {
