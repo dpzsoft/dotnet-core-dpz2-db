@@ -8,7 +8,7 @@
     <PackageLicenseFile>LICENSE</PackageLicenseFile>
     <Authors>d.p.z software studio</Authors>
     <Description>dpz2开发套件数据库应用扩展(.Net Core)，目前支持Sql Server、MySql、Sqlite和PostgreSql，同时支持数据库的原生SQL语句和通用的.Net封装函数操作</Description>
-    <Version>1.1.1908.15</Version>
+    <Version>1.2.1909.17</Version>
     <PackageId>dotnet-core-dpz2-db</PackageId>
   </PropertyGroup>
 

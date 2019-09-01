@@ -522,7 +522,7 @@ namespace dpz2.db {
                     if (fid.Name != "" && fid.Name != fidName) {
                         Exec($"ALTER TABLE \"{tabName}\" RENAME \"{fidName}\" TO \"{fid.Name}\"");
                     } else {
-                        Exec($"ALTER TABLE `{tabName}` MODIFY COLUMN `{fidName}` {stp}");
+                        Exec($"ALTER TABLE \"{tabName}\" ALTER COLUMN \"{fidName}\" TYPE {stp}");
                     }
                     break;
                 //case DatabaseTypes.Microsoft_Office_Access:
@@ -553,7 +553,7 @@ namespace dpz2.db {
                     Exec($"ALTER TABLE `{tabName}` DROP `{fidName}`;");
                     break;
                 case DatabaseTypes.PostgreSQL:
-                    Exec($"ALTER TABLE \"{tabName}\" DROP COLUMN `{fidName}`;");
+                    Exec($"ALTER TABLE \"{tabName}\" DROP COLUMN \"{fidName}\";");
                     break;
                 default: throw new Exception($"连接管理器尚未支持\"{db.Type.ToString()}\"数据库");
             }
